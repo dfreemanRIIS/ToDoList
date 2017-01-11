@@ -1,6 +1,7 @@
 package com.example.dfreeman.todolist;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by dfreeman
@@ -13,8 +14,17 @@ public class toDoItem {
     private boolean complete;
     private Reminder reminder;
 
+    private static Calendar testCal1 = new GregorianCalendar(2017, 1, 10, 12, 12, 12);
+    private static Calendar testCal2 = new GregorianCalendar(2017, 1, 11, 13, 12, 12);
+    private static Calendar testCal3 = new GregorianCalendar(2017, 1, 12, 14, 12, 12);
+
+    public static final toDoItem[] testToDo = {
+            new toDoItem("To Do Test One", testCal1, false),
+            new toDoItem("To Do Test Two", testCal3, testCal2, false),
+    };
+
     //Constructor
-    public toDoItem(String name, Calendar completionCalendar, Calendar startCalendar, boolean complete) {
+    private toDoItem(String name, Calendar completionCalendar, Calendar startCalendar, boolean complete) {
         this.name = name;
         this.completionCalendar = completionCalendar;
         this.startCalendar = startCalendar;
@@ -22,7 +32,7 @@ public class toDoItem {
     }
 
     //Constructor without end date
-    public toDoItem(String name, Calendar startCalendar, boolean complete) {
+    private toDoItem(String name, Calendar startCalendar, boolean complete) {
         this.name = name;
         this.startCalendar = startCalendar;
         this.complete = complete;
@@ -60,5 +70,10 @@ public class toDoItem {
     }
     public void setReminder(Reminder reminder) {
         this.reminder = reminder;
+    }
+
+    //toString
+    public String toString() {
+        return this.name;
     }
 }
