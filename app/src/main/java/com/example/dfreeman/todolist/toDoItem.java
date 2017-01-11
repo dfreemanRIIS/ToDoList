@@ -12,14 +12,25 @@ public class toDoItem {
     private Date completionDate;
     private int[] time = new int[2];
     private boolean complete;
+    private Reminder reminder;
 
-
+    //Constructor - No reminder
     public toDoItem(String name, Date startDate, Date completionDate, int[] time, boolean complete) {
         this.name = name;
         this.startDate = startDate;
         this.completionDate = completionDate;
         this.time = time;
         this.complete = complete;
+    }
+
+    //Constructor with Reminder
+    public toDoItem(String name, Date startDate, Date completionDate, int[] time, boolean complete, Reminder reminder) {
+        this.name = name;
+        this.startDate = startDate;
+        this.completionDate = completionDate;
+        this.time = time;
+        this.complete = complete;
+        this.reminder = reminder;
     }
 
     //Getters
@@ -38,6 +49,9 @@ public class toDoItem {
     public boolean isComplete() {
         return complete;
     }
+    public Reminder getReminder() {
+        return reminder;
+    }
 
     //Setters
     public void setName(String name) {
@@ -54,5 +68,8 @@ public class toDoItem {
     }
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+    public void setReminder(Reminder reminder) {
+        this.reminder = reminder;
     }
 }
