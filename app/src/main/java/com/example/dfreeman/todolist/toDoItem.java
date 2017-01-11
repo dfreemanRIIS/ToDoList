@@ -1,6 +1,6 @@
 package com.example.dfreeman.todolist;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Created by dfreeman
@@ -8,43 +8,35 @@ import java.util.Date;
 
 public class toDoItem {
     private String name;
-    private Date startDate;
-    private Date completionDate;
-    private int[] time = new int[2];
+    private Calendar completionCalendar;
+    private Calendar startCalendar;
     private boolean complete;
     private Reminder reminder;
 
-    //Constructor - No reminder
-    public toDoItem(String name, Date startDate, Date completionDate, int[] time, boolean complete) {
+    //Constructor
+    public toDoItem(String name, Calendar completionCalendar, Calendar startCalendar, boolean complete) {
         this.name = name;
-        this.startDate = startDate;
-        this.completionDate = completionDate;
-        this.time = time;
+        this.completionCalendar = completionCalendar;
+        this.startCalendar = startCalendar;
         this.complete = complete;
     }
 
-    //Constructor with Reminder
-    public toDoItem(String name, Date startDate, Date completionDate, int[] time, boolean complete, Reminder reminder) {
+    //Constructor without end date
+    public toDoItem(String name, Calendar startCalendar, boolean complete) {
         this.name = name;
-        this.startDate = startDate;
-        this.completionDate = completionDate;
-        this.time = time;
+        this.startCalendar = startCalendar;
         this.complete = complete;
-        this.reminder = reminder;
     }
 
     //Getters
     public String getName() {
         return name;
     }
-    public Date getStartDate() {
-        return startDate;
+    public Calendar getCompletionCalendar() {
+        return completionCalendar;
     }
-    public Date getCompletionDate() {
-        return completionDate;
-    }
-    public int[] getTime() {
-        return time;
+    public Calendar getStartCalendar() {
+        return startCalendar;
     }
     public boolean isComplete() {
         return complete;
@@ -57,14 +49,11 @@ public class toDoItem {
     public void setName(String name) {
         this.name = name;
     }
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setCompletionCalendar(Calendar completionCalendar) {
+        this.completionCalendar = completionCalendar;
     }
-    public void setCompletionDate(Date completionDate) {
-        this.completionDate = completionDate;
-    }
-    public void setTime(int[] time) {
-        this.time = time;
+    public void setStartCalendar(Calendar startCalendar) {
+        this.startCalendar = startCalendar;
     }
     public void setComplete(boolean complete) {
         this.complete = complete;

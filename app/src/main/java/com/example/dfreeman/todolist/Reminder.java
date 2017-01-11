@@ -1,33 +1,23 @@
 package com.example.dfreeman.todolist;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Created by dfreeman
  */
 
 public class Reminder {
-    private Date reminderDate;
-    private int[] reminderTime = new int[2];
+    private Calendar calender;
 
-    public Reminder(Date reminderDate, int[] reminderTime) {
-        this.reminderDate = reminderDate;
-        this.reminderTime = reminderTime;
+    public Reminder(Calendar calender) {
+        this.calender = calender;
     }
 
-    //Getters
-    public int[] getReminderTime() {
-        return reminderTime;
-    }
-    public Date getReminderDate() {
-        return reminderDate;
+    public Calendar getCalender() {
+        return calender;
     }
 
-    //Setters
-    public void setReminderTime(int[] reminderTime) {
-        this.reminderTime = reminderTime;
-    }
-    public void setReminderDate(Date reminderDate) {
-        this.reminderDate = reminderDate;
+    public void setCalender(Calendar calender) {
+        this.calender = calender;
     }
 }
