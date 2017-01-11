@@ -10,8 +10,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dfreeman.todolist.MainActivity">
 
-    <TextView
+    <ListView
+        android:id="@+id/toDoList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:entries="@array/toDo"/>
+
+    <TextView
+        android:text="@string/reminders"
+        android:layout_below="@+id/toDoList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reminder" />
+
+    <ListView
+        android:layout_below="@+id/reminder"
+        android:id="@+id/reminderList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/reminders"/>
+
+    <Button
+        android:text="@string/doneWithSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/addNew"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/doneWithSelected" />
+
+    <Button
+        android:text="@string/addNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addNew"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    
 </RelativeLayout>

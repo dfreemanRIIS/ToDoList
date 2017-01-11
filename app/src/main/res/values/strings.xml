@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">ToDoList</string>
+    <string name="app_name">To Do List:</string>
+    <string name="addNew">Add New</string>
+    <string name="reminders">Reminders:</string>
+    <string name="doneWithSelected">Done With Selected</string>
+    <string-array name="toDo">
+        <item>to do one</item>
+        <item>to do two</item>
+    </string-array>
+    <string-array name="reminders">
+        <item>reminder one</item>
+        <item>reminder two</item>
+    </string-array>
 </resources>
