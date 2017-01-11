@@ -2,12 +2,14 @@ package com.example.dfreeman.todolist;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by dfreeman
  */
 
 public class toDoItem {
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
     private String name;
     private Calendar completionCalendar;
     private Calendar startCalendar;
@@ -74,6 +76,10 @@ public class toDoItem {
 
     //toString
     public String toString() {
-        return this.name;
+        if (completionCalendar != null) {
+            return this.name + "  DUE BY:  " + sdf.format(completionCalendar.getTime());
+        } else {
+            return this.name;
+        }
     }
 }
