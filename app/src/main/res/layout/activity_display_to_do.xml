@@ -29,15 +29,22 @@
         android:layout_below="@id/completeDate"/>
 
     <TextView
-        android:id="@+id/complete"
+        android:id="@+id/hasReminder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/startDate"/>
 
     <TextView
-        android:id="@+id/hasReminder"
+        android:id="@+id/complete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/complete"/>
+        android:layout_below="@+id/hasReminder"/>
+
+    <Button
+        android:text="@string/doneWithToDo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/complete"
+        android:id="@+id/doneWithToDo" />
 
 </RelativeLayout>

@@ -32,15 +32,6 @@
         android:entries="@array/reminders"/>
 
     <Button
-        android:text="@string/doneWithSelected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/addNew"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/doneWithSelected" />
-
-    <Button
         android:text="@string/addNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

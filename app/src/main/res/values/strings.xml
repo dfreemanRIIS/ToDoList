@@ -2,7 +2,7 @@
     <string name="app_name">To Do List:</string>
     <string name="addNew">Add New</string>
     <string name="reminders">Reminders:</string>
-    <string name="doneWithSelected">Done With Selected</string>
+    <string name="doneWithToDo">Done With To Do</string>
     <string-array name="toDo">
         <item>to do one</item>
         <item>to do two</item>
