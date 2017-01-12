@@ -47,6 +47,7 @@
         android:id="@+id/addNew"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="onAddNewActivity"/>
     
 </RelativeLayout>
