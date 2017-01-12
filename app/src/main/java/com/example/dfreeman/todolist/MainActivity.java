@@ -22,10 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> listView, View v, int position, long id) {
-                if (position == 0) {
                     Intent intent = new Intent(MainActivity.this, DisplayToDoActivity.class);
+                    intent.putExtra(DisplayToDoActivity.EXTRA_TODONO, (int) id);
                     startActivity(intent);
-                }
             }
         };
         listToDos.setOnItemClickListener(itemClickListener);
