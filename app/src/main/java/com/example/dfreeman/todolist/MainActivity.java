@@ -9,10 +9,15 @@ import android.widget.ListView;
 import android.view.View;
 import android.content.Intent;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<String> todoItems = new ArrayList<>();
+    public static ArrayList<Calendar> todoCompleteCal = new ArrayList<>();
+    public static ArrayList<Calendar> todoStartCal = new ArrayList<>();
+    public static ArrayList<Boolean> todoComplete = new ArrayList<>();
+    public static ArrayList<Boolean> todoReminder = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAddNewActivity(View view) {
-
-
-
         Intent intent = new Intent(this, AddNewActivity.class);
         startActivity(intent);
     }

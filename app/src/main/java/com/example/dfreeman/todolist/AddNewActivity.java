@@ -8,6 +8,9 @@ import android.support.v4.app.DialogFragment;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class AddNewActivity extends AppCompatActivity {
 
     @Override
@@ -39,6 +42,20 @@ public class AddNewActivity extends AppCompatActivity {
         EditText newTaskName = (EditText)findViewById(R.id.enter_name);
         String newTaskNameString = newTaskName.getText().toString();
         MainActivity.todoItems.add(newTaskNameString);
+
+        //Pass in new Start Calendar  MOCK
+        Calendar testComp = new GregorianCalendar(2017, 1, 10, 12, 12, 12);
+        MainActivity.todoCompleteCal.add(testComp);
+
+        //Pass in new Completion Calendar  MOCK
+        MainActivity.todoStartCal.add(testComp);
+
+        //Pass in new is complete bool  MOCK
+        MainActivity.todoComplete.add(true);
+
+        //Pass in new has reminder bool  MOCK
+        MainActivity.todoReminder.add(true);
+
         //Go back to main menu
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

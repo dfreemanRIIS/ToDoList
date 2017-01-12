@@ -17,37 +17,41 @@ public class DisplayToDoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_to_do);
 
         int toDoNo = (Integer)getIntent().getExtras().get(EXTRA_TODONO);
-        toDoItem toDo = toDoItem.testToDo[toDoNo];  //STILL GRABBING OLD TEST DATA
 
+        //Display Name
         TextView name = (TextView)findViewById(R.id.name);
         name.setText(MainActivity.todoItems.get(toDoNo));
 
-        Calendar completionCalendar = toDo.getCompletionCalendar();
+        //Display Comp Cal
         TextView completeDate = (TextView) findViewById(R.id.completeDate);
+        Calendar completionCalendar = MainActivity.todoCompleteCal.get(toDoNo);
         if (completionCalendar != null) {
-            String completeToString = "Completion date: " + sdf.format(toDo.getCompletionCalendar().getTime());
+            String completeToString = "Completion date: " + sdf.format(MainActivity.todoCompleteCal.get(toDoNo).getTime());
             completeDate.setText(completeToString);
         } else {
             String temp = "No completion date set!";
             completeDate.setText(temp);
         }
 
-        Calendar startCalendar = toDo.getStartCalendar();
+        //Display Start Cal
         TextView startDate = (TextView)findViewById(R.id.startDate);
+        Calendar startCalendar = MainActivity.todoStartCal.get(toDoNo);
         if (startCalendar != null) {
-            String startToString = "Start date: " + sdf.format(toDo.getStartCalendar().getTime());
+            String startToString = "Start date: " + sdf.format(MainActivity.todoStartCal.get(toDoNo).getTime());
             startDate.setText(startToString);
         } else {
             String temp = "No start date set!";
             startDate.setText(temp);
         }
 
+        //Display Complete bool
         TextView complete = (TextView)findViewById(R.id.complete);
-        String completeAsString = "Task complete: " + String.valueOf(toDo.isComplete());
+        String completeAsString = "Task complete: " + String.valueOf(MainActivity.todoComplete.get(toDoNo));
         complete.setText(completeAsString);
 
+        //Display Reminder bool
         TextView hasReminder =(TextView) findViewById(R.id.hasReminder);
-        String isReminderAsString = "Task has a reminder: " + String.valueOf(toDo.isReminder());
+        String isReminderAsString = "Task has a reminder: " + String.valueOf(MainActivity.todoReminder.get(toDoNo));
         hasReminder.setText(isReminderAsString);
     }
 }
