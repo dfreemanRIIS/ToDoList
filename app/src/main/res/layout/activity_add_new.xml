@@ -10,15 +10,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dfreeman.todolist.AddNewActivity">
 
-    <TextView
-        android:text="@string/start_date"
+    <EditText
+        android:id="@+id/enter_name"
+        android:inputType="textPersonName"
+        android:text="@string/enter_todo_label"
+        android:ems="10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textSize="25sp"
-        android:id="@+id/start_date"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/start_date"
+        android:textSize="25sp"
+        android:id="@+id/start_date"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/enter_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:layout_below="@+id/start_date"
@@ -62,5 +74,16 @@
         android:layout_height="wrap_content"
         android:text="@string/pick_date"
         android:onClick="showDatePickerDialog" />
+
+    <CheckBox
+        android:text="@string/add_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pick_end_date"
+        android:layout_alignRight="@+id/pick_end_date"
+        android:layout_alignEnd="@+id/pick_end_date"
+        android:layout_marginTop="13dp"
+        android:id="@+id/reminderOption"
+        android:onClick="showBoth" />
 
 </RelativeLayout>

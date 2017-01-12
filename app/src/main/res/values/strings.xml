@@ -15,4 +15,6 @@
     <string name="pick_date">Pick Date:</string>
     <string name="start_date">Start Date:</string>
     <string name="end_date">End Date:</string>
+    <string name="enter_todo_label">Enter ToDo Label</string>
+    <string name="add_reminder">Add Reminder</string>
 </resources>
