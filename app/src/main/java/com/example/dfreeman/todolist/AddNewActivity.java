@@ -1,10 +1,12 @@
 package com.example.dfreeman.todolist;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.support.v4.app.DialogFragment;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 public class AddNewActivity extends AppCompatActivity {
 
@@ -30,5 +32,15 @@ public class AddNewActivity extends AppCompatActivity {
             showDatePickerDialog(v);
             showTimePickerDialog(v);
         }
+    }
+
+    public void newToDoDone(View v) {
+        //Pass new list item name
+        EditText newTaskName = (EditText)findViewById(R.id.enter_name);
+        String newTaskNameString = newTaskName.getText().toString();
+        MainActivity.todoItems.add(newTaskNameString);
+        //Go back to main menu
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

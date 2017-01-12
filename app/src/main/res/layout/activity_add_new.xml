@@ -86,4 +86,16 @@
         android:id="@+id/reminderOption"
         android:onClick="showBoth" />
 
+    <Button
+        android:text="@string/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reminderOption"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button_done"
+        android:onClick="newToDoDone"/>
+
 </RelativeLayout>
