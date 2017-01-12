@@ -22,4 +22,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"/>
 
+    <TextView
+        android:id="@+id/startDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/completeDate"/>
+
+    <TextView
+        android:id="@+id/complete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startDate"/>
+
+    <TextView
+        android:id="@+id/hasReminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/complete"/>
+
 </RelativeLayout>

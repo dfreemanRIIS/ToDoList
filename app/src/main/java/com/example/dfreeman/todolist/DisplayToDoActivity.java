@@ -28,5 +28,20 @@ public class DisplayToDoActivity extends AppCompatActivity {
             String completeToString = sdf.format(toDo.getCompletionCalendar().getTime());
             completeDate.setText(completeToString);
         }
+
+        Calendar startCalendar = toDo.getStartCalendar();
+        if (startCalendar != null) {
+            TextView startDate = (TextView)findViewById(R.id.startDate);
+            String startToString = sdf.format(toDo.getStartCalendar().getTime());
+            startDate.setText(startToString);
+        }
+
+        TextView complete = (TextView)findViewById(R.id.complete);
+        String completeAsString = new Boolean(toDo.isComplete()).toString();
+        complete.setText(completeAsString);
+
+        TextView hasReminder =(TextView) findViewById(R.id.hasReminder);
+        String isReminderAsString = new Boolean(toDo.isReminder()).toString();
+        hasReminder.setText(isReminderAsString);
     }
 }

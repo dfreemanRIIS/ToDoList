@@ -56,6 +56,13 @@ public class toDoItem {
     public Reminder getReminder() {
         return reminder;
     }
+    public boolean isReminder() {
+        if(reminder != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     //Setters
     public void setName(String name) {
