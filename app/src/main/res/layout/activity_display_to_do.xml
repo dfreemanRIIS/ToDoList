@@ -14,37 +14,48 @@
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/completeDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name"/>
+        android:layout_below="@+id/name"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/startDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/completeDate"/>
+        android:layout_below="@id/completeDate"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/hasReminder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/startDate"/>
+        android:layout_below="@+id/startDate"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/complete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hasReminder"/>
+        android:layout_below="@+id/hasReminder"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:text="@string/doneWithToDo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/complete"
-        android:id="@+id/doneWithToDo" />
+        android:id="@+id/doneWithToDo"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

@@ -23,25 +23,29 @@ public class DisplayToDoActivity extends AppCompatActivity {
         name.setText(toDo.getName());
 
         Calendar completionCalendar = toDo.getCompletionCalendar();
+        TextView completeDate = (TextView) findViewById(R.id.completeDate);
         if (completionCalendar != null) {
-            TextView completeDate = (TextView) findViewById(R.id.completeDate);
             String completeToString = sdf.format(toDo.getCompletionCalendar().getTime());
-            completeDate.setText(completeToString);
+            completeDate.setText("Completion date: " + completeToString);
+        } else {
+            completeDate.setText("No completion date set!");
         }
 
         Calendar startCalendar = toDo.getStartCalendar();
+        TextView startDate = (TextView)findViewById(R.id.startDate);
         if (startCalendar != null) {
-            TextView startDate = (TextView)findViewById(R.id.startDate);
             String startToString = sdf.format(toDo.getStartCalendar().getTime());
-            startDate.setText(startToString);
+            startDate.setText("Start date: " + startToString);
+        } else {
+            startDate.setText("No start date set!");
         }
 
         TextView complete = (TextView)findViewById(R.id.complete);
         String completeAsString = String.valueOf(toDo.isComplete());
-        complete.setText(completeAsString);
+        complete.setText("Task complete: " + completeAsString);
 
         TextView hasReminder =(TextView) findViewById(R.id.hasReminder);
         String isReminderAsString = String.valueOf(toDo.isReminder());
-        hasReminder.setText(isReminderAsString);
+        hasReminder.setText("Task has a reminder: " + isReminderAsString);
     }
 }
