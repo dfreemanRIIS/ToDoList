@@ -53,8 +53,14 @@ public class AddNewActivity extends AppCompatActivity {
         //Pass in new is complete bool  MOCK
         MainActivity.todoComplete.add(true);
 
-        //Pass in new has reminder bool  MOCK
-        MainActivity.todoReminder.add(true);
+        //Pass in new has reminder bool
+        CheckBox myCheckbox;
+        myCheckbox = (CheckBox) findViewById(R.id.reminderOption);
+        if(myCheckbox.isChecked()) {
+            MainActivity.todoReminder.add(true);
+        } else {
+            MainActivity.todoReminder.add(false);
+        }
 
         //Go back to main menu
         Intent intent = new Intent(this, MainActivity.class);
