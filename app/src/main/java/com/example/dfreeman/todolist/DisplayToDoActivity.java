@@ -25,27 +25,29 @@ public class DisplayToDoActivity extends AppCompatActivity {
         Calendar completionCalendar = toDo.getCompletionCalendar();
         TextView completeDate = (TextView) findViewById(R.id.completeDate);
         if (completionCalendar != null) {
-            String completeToString = sdf.format(toDo.getCompletionCalendar().getTime());
-            completeDate.setText("Completion date: " + completeToString);
+            String completeToString = "Completion date: " + sdf.format(toDo.getCompletionCalendar().getTime());
+            completeDate.setText(completeToString);
         } else {
-            completeDate.setText("No completion date set!");
+            String temp = "No completion date set!";
+            completeDate.setText(temp);
         }
 
         Calendar startCalendar = toDo.getStartCalendar();
         TextView startDate = (TextView)findViewById(R.id.startDate);
         if (startCalendar != null) {
-            String startToString = sdf.format(toDo.getStartCalendar().getTime());
-            startDate.setText("Start date: " + startToString);
+            String startToString = "Start date: " + sdf.format(toDo.getStartCalendar().getTime());
+            startDate.setText(startToString);
         } else {
-            startDate.setText("No start date set!");
+            String temp = "No start date set!";
+            startDate.setText(temp);
         }
 
         TextView complete = (TextView)findViewById(R.id.complete);
-        String completeAsString = String.valueOf(toDo.isComplete());
-        complete.setText("Task complete: " + completeAsString);
+        String completeAsString = "Task complete: " + String.valueOf(toDo.isComplete());
+        complete.setText(completeAsString);
 
         TextView hasReminder =(TextView) findViewById(R.id.hasReminder);
-        String isReminderAsString = String.valueOf(toDo.isReminder());
-        hasReminder.setText("Task has a reminder: " + isReminderAsString);
+        String isReminderAsString = "Task has a reminder: " + String.valueOf(toDo.isReminder());
+        hasReminder.setText(isReminderAsString);
     }
 }
