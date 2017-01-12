@@ -17,10 +17,10 @@ public class DisplayToDoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_to_do);
 
         int toDoNo = (Integer)getIntent().getExtras().get(EXTRA_TODONO);
-        toDoItem toDo = toDoItem.testToDo[toDoNo];
+        toDoItem toDo = toDoItem.testToDo[toDoNo];  //STILL GRABBING OLD TEST DATA
 
         TextView name = (TextView)findViewById(R.id.name);
-        name.setText(toDo.getName());
+        name.setText(MainActivity.todoItems.get(toDoNo));
 
         Calendar completionCalendar = toDo.getCompletionCalendar();
         TextView completeDate = (TextView) findViewById(R.id.completeDate);
