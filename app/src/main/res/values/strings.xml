@@ -11,4 +11,6 @@
         <item>reminder one</item>
         <item>reminder two</item>
     </string-array>
+    <string name="pick_time">Pick Time:</string>
+    <string name="pick_date">Pick Date:</string>
 </resources>

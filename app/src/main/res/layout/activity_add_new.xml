@@ -21,4 +21,20 @@
         android:layout_marginStart="13dp"
         android:textSize="40sp"
         android:id="@+id/addNewLabel" />
+
+    <Button
+        android:layout_below="@+id/addNewLabel"
+        android:id="@+id/pick_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_time"
+        android:onClick="showTimePickerDialog" />
+
+    <Button
+        android:id="@+id/pick_date"
+        android:layout_below="@+id/pick_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_date"
+        android:onClick="showDatePickerDialog" />
 </RelativeLayout>
