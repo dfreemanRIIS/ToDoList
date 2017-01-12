@@ -1,15 +1,15 @@
 package com.example.dfreeman.todolist;
 
-import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
 public class DisplayToDoActivity extends AppCompatActivity {
 
     public static final String EXTRA_TODONO = "toDoNumber";
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +22,11 @@ public class DisplayToDoActivity extends AppCompatActivity {
         TextView name = (TextView)findViewById(R.id.name);
         name.setText(toDo.getName());
 
-
-
-        //ListView listView = getListView();
-        //ArrayAdapter<toDoItem> listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, toDoItem.testToDo);
-        //listView.setAdapter(listAdapter);
+        Calendar completionCalendar = toDo.getCompletionCalendar();
+        if (completionCalendar != null) {
+            TextView completeDate = (TextView) findViewById(R.id.completeDate);
+            String completeToString = sdf.format(toDo.getCompletionCalendar().getTime());
+            completeDate.setText(completeToString);
+        }
     }
 }
