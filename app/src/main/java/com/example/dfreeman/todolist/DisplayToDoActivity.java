@@ -2,7 +2,10 @@ package com.example.dfreeman.todolist;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 
@@ -53,5 +56,11 @@ public class DisplayToDoActivity extends AppCompatActivity {
         TextView hasReminder =(TextView) findViewById(R.id.hasReminder);
         String isReminderAsString = "Task has a reminder: " + String.valueOf(MainActivity.todoReminder.get(toDoNo));
         hasReminder.setText(isReminderAsString);
+    }
+
+    public void remove_task(View v) {
+        int toDoNo = (Integer)getIntent().getExtras().get(EXTRA_TODONO);
+        String name = MainActivity.todoItems.get(toDoNo);
+        Toast.makeText(this, "DELETE " + name, Toast.LENGTH_SHORT).show();
     }
 }
