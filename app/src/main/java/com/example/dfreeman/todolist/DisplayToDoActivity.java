@@ -37,11 +37,11 @@ public class DisplayToDoActivity extends AppCompatActivity {
         }
 
         TextView complete = (TextView)findViewById(R.id.complete);
-        String completeAsString = new Boolean(toDo.isComplete()).toString();
+        String completeAsString = String.valueOf(toDo.isComplete());
         complete.setText(completeAsString);
 
         TextView hasReminder =(TextView) findViewById(R.id.hasReminder);
-        String isReminderAsString = new Boolean(toDo.isReminder()).toString();
+        String isReminderAsString = String.valueOf(toDo.isReminder());
         hasReminder.setText(isReminderAsString);
     }
 }
