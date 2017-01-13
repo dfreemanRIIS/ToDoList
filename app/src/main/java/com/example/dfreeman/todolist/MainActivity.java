@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Calendar> todoStartCal = new ArrayList<>();
     public static ArrayList<Boolean> todoComplete = new ArrayList<>();
     public static ArrayList<Boolean> todoReminder = new ArrayList<>();
+    public static ArrayList<Calendar> todoRemCal = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

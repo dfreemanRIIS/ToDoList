@@ -7,13 +7,17 @@ import android.support.v4.app.DialogFragment;
 import android.app.Dialog;
 import android.os.Bundle;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by dfreeman
  */
 
-public class DatePickerFragment extends DialogFragment
-        implements DatePickerDialog.OnDateSetListener {
+public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
+    public static boolean isRemDate = false;
+    public static boolean isStartDate = false;
+    public static boolean isCompDate = false;
 
     @Override @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -28,6 +32,18 @@ public class DatePickerFragment extends DialogFragment
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        // Do something with the date chosen by the user
+
+        Calendar tempC = new GregorianCalendar(year, month, day);
+        if (isRemDate == true) {
+            MainActivity.todoRemCal.add(tempC);
+        } else if (isStartDate == true) {
+            MainActivity.todoStartCal.add(tempC);
+        } else if (isCompDate == true) {
+            MainActivity.todoCompleteCal.add(tempC);
+        }
+
+        isRemDate = false;
+        isStartDate = false;
+        isCompDate = false;
     }
 }

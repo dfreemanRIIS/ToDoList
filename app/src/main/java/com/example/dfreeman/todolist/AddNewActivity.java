@@ -25,6 +25,7 @@ public class AddNewActivity extends AppCompatActivity {
     }
 
     public void showDatePickerDialog(View v) {
+        DatePickerFragment.isStartDate = true;
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
@@ -48,7 +49,7 @@ public class AddNewActivity extends AppCompatActivity {
         MainActivity.todoCompleteCal.add(testComp);
 
         //Pass in new Completion Calendar  MOCK
-        MainActivity.todoStartCal.add(testComp);
+        //MainActivity.todoStartCal.add(testComp);
 
         //Pass in new is complete bool  MOCK
         MainActivity.todoComplete.add(false);
