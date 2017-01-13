@@ -13,7 +13,7 @@
     <EditText
         android:id="@+id/enter_name"
         android:inputType="textPersonName"
-        android:text="@string/enter_todo_label"
+        android:hint="@string/enter_todo_label"
         android:ems="10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
