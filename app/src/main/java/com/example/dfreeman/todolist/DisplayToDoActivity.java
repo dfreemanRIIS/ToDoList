@@ -62,7 +62,11 @@ public class DisplayToDoActivity extends AppCompatActivity {
     public void remove_task(View v) {
         int toDoNo = (Integer)getIntent().getExtras().get(EXTRA_TODONO);
         String name = MainActivity.todoItems.get(toDoNo);
-        MainActivity.todoItems.remove(name);
+        MainActivity.todoItems.remove(toDoNo);
+        MainActivity.todoCompleteCal.remove(toDoNo);
+        MainActivity.todoStartCal.remove(toDoNo);
+        MainActivity.todoComplete.remove(toDoNo);
+        MainActivity.todoReminder.remove(toDoNo);
         Toast.makeText(this, "DELETE " + name, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

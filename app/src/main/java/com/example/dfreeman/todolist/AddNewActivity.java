@@ -51,7 +51,7 @@ public class AddNewActivity extends AppCompatActivity {
         MainActivity.todoStartCal.add(testComp);
 
         //Pass in new is complete bool  MOCK
-        MainActivity.todoComplete.add(true);
+        MainActivity.todoComplete.add(false);
 
         //Pass in new has reminder bool
         CheckBox myCheckbox;
