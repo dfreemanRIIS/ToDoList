@@ -1,5 +1,6 @@
 package com.example.dfreeman.todolist;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -61,6 +62,9 @@ public class DisplayToDoActivity extends AppCompatActivity {
     public void remove_task(View v) {
         int toDoNo = (Integer)getIntent().getExtras().get(EXTRA_TODONO);
         String name = MainActivity.todoItems.get(toDoNo);
+        MainActivity.todoItems.remove(name);
         Toast.makeText(this, "DELETE " + name, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
